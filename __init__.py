@@ -9,6 +9,7 @@ import bpy
 import subprocess
 import importlib
 import importlib.metadata
+import shutil
 import sys
 from . import auto_load
 from pathlib import Path
@@ -46,6 +47,36 @@ def _installed_version(dist_name):
     except importlib.metadata.PackageNotFoundError:
         return None
 
+def _remove_package(package_name: str, path_dirs: Path) -> bool:
+    for path in path_dirs.glob(package_name):
+        if path.is_dir():
+            try:
+                shutil.rmtree(path)
+            except FileNotFoundError:
+                pass  # Already removed
+            except PermissionError as e:
+                print(f"FaceMocap: Cannot remove {path}: {e}")
+                return False
+            except OSError as e:
+                print(f"FaceMocap: Failed to remove {path}: {e}")
+                return False
+
+    for pattern in (f"{package_name}*.dist-info", f"{package_name}*.egg-info"):
+        for path in path_dirs.glob(pattern):
+            if path.is_dir():
+                try:
+                    shutil.rmtree(path)
+                except FileNotFoundError:
+                    pass  # Already removed
+                except PermissionError as e:
+                    print(f"FaceMocap: Cannot remove {path}: {e}")
+                    return False
+                except OSError as e:
+                    print(f"FaceMocap: Failed to remove {path}: {e}")
+                    return False
+            else:
+                path.unlink()
+    return True
 
 #installa le dipendenze se non sono già installate (o se la versione è diversa)
 def install_dependencies():
@@ -60,28 +91,35 @@ def install_dependencies():
     if cv2_version != OPENCV_VERSION:
         print(f"\033[31mFaceMocap: opencv-contrib-python {cv2_version} found, {OPENCV_VERSION} required\033[0m")
         missing_packages.append(f"opencv-contrib-python=={OPENCV_VERSION}")
+        ok = _remove_package("opencv-contrib-python", LIB_DIR)
+        if not ok:
+            print("\033[31mFaceMocap: ERROR - one or more installation commands failed. See the output above.\033[0m")
     else:
         print(f"\033[32mFaceMocap: opencv-contrib-python version={cv2_version} detected\033[0m")
 
     mp_version = _installed_version("mediapipe")
     if mp_version != MEDIAPIPE_VERSION:
         print(f"\033[31mFaceMocap: mediapipe {mp_version} found, {MEDIAPIPE_VERSION} required\033[0m")
+        ok = _remove_package("mediapipe", LIB_DIR)
+        if not ok:
+                    print("\033[31mFaceMocap: ERROR - one or more installation commands failed. See the output above.\033[0m")
         missing_packages.append(f"mediapipe=={MEDIAPIPE_VERSION}")
     else:
-        print(f"\033[32mFaceMocap: mediapipe version={mp_version} detected\033[0m")
+     print(f"\033[32mFaceMocap: mediapipe version={mp_version} detected\033[0m")
 
     if missing_packages:
         print(f"\033[34mFaceMocap: Installing {missing_packages} in {LIB_DIR}. Wait...\033[0m")
-        ok = _run([python_exe, "-m", "ensurepip"])
-        ok = _run([python_exe, "-m", "pip", "install", "--upgrade", "pip"]) and ok
-        ok = _run([
-            python_exe, "-m", "pip", "install",
-            "--upgrade",
-            "--target", str(LIB_DIR),
-            "numpy<2",
-            f"opencv-contrib-python=={OPENCV_VERSION}",
-            f"mediapipe=={MEDIAPIPE_VERSION}",
-        ]) and ok
+        #ok = _run([python_exe, "-m", "ensurepip"])
+        #ok = _run([python_exe, "-m", "pip", "install", "--upgrade", "pip"]) and ok
+        ok = True
+        for package in missing_packages:
+            #"numpy<2",
+            ok = _run([
+                python_exe, "-m", "pip", "install",
+                "--upgrade",
+                "--target", str(LIB_DIR),
+                package
+            ]) and ok
  
         if not ok:
             print("\033[31mFaceMocap: ERROR - one or more installation commands failed. See the output above.\033[0m")
