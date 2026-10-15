@@ -345,7 +345,7 @@ class FaceTracker:
         frame ancora, nessun viso riconosciuto, nessun risultato NUOVO
         dall'ultima chiamata (in LIVE_STREAM il risultato arriva in modo
         asincrono). L'istante e' il timestamp del frame analizzato, da usare
-        nei filtri. Non blocca: il frame lo legge il thread di cattura.
+        nei filtri. Non bloccante: il frame lo legge il thread di cattura.
         """
         image, nuovo = self._latest_frame()
         self.stats["letture"] += 1

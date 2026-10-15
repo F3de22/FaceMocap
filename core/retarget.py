@@ -207,7 +207,6 @@ class RetargetSolver:
         if rig:
             reset_rig_pose(rig)
 
-    #move to retarget class
     def accumulate_calibration(self, local, head_frame: HeadFrame, source_pose=None) -> None:
         for idx, vec in local.items():
             if idx in self._calib_sum:
@@ -258,8 +257,6 @@ class RetargetSolver:
         dett_unit = {}
         self._unit_scale = solver.solve_unit_scale(rig, self._neutral, dett_unit)
         if self._unit_scale is None:
-            #self.report({'WARNING'}, "Impossibile stimare la scala del rig: controlla le posizioni delle ossa.")
-            #self.report({'WARNING'}, "Unable to estimate rig's scale: check the bones' postions.")
             return False
         
         dett_scale = {}

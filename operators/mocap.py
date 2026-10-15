@@ -577,11 +577,11 @@ class FACEMOCAP_OT_start_capture(bpy.types.Operator):
         if results is None:
             return {'PASS_THROUGH'}
         landmarks, aspect, t_frame = results.landmarks, results.aspect, results.time
-        #ok
+
         head_frame = solver.build_head_frame(landmarks, aspect)
         if head_frame is None:
             return {'PASS_THROUGH'}
-        #ok
+        
         local = solver.to_head_local(landmarks, head_frame, self._track_idx, aspect)
         pose = solver.pose_from_matrix(results.pose)
         source_pose = solver.SourcePose(local=local,

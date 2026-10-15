@@ -117,7 +117,7 @@ def head_rotation_matrix(rot_neutral, rot_current):
     relative = rot_neutral.transposed() @ rot_current
     return HEAD_TO_BLENDER @ relative @ HEAD_TO_BLENDER.transposed()
 
-def pose_from_matrix(mat):
+def pose_from_matrix(mat) -> (tuple[Matrix, Vector] | None):
     """Matrice 4x4 di MediaPipe -> (rotazione ortonormale, traslazione in cm), o None."""
     if mat is None:
         return None
