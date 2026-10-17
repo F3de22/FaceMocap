@@ -2,7 +2,7 @@
 
 An add-on for real-time facial motion capture for Blender 4.2 and later verisions
 
-![Blender](https://img.shields.io/badge/Blender-4.2%2B%20%7C%205.0-orange?logo=blender&logoColor=white)
+![Blender](https://img.shields.io/badge/Blender-4.2%2B%20%7C%205.2-orange?logo=blender&logoColor=white)
 ![Python](https://img.shields.io/badge/Python-3.11%2B-blue?logo=python&logoColor=white)
 ![MediaPipe](https://img.shields.io/badge/MediaPipe-Face%20Landmarker-00A8E8?logo=google&logoColor=white)
 ![OpenCV](https://img.shields.io/badge/OpenCV-Real--Time-green?logo=opencv&logoColor=white)
