@@ -1,21 +1,14 @@
 # FaceMocap
 
-An add-on for facial motion capture for Blender 4.2 and later verisions
+An add-on for real-time facial motion capture for Blender 4.2 and later verisions
+
+## Installation
+- link for download from Blender website: 
+- downlaod the repository and import&install in Blender
+**Dependecies:
+  Python packages: 'mediapipe', 'opencv-python', 'numpy'
 
 ## References
-
-[https://docs.blender.org/manual/en/4.2/advanced/extensions/index.html](https://docs.blender.org/manual/en/4.2/advanced/extensions/index.html)
-
-[https://developer.blender.org/docs/handbook/extensions/addon_guidelines/](https://developer.blender.org/docs/handbook/extensions/addon_guidelines/)
-
-[https://docs.blender.org/api/4.2/info_overview.html](https://docs.blender.org/api/4.2/info_overview.html)
-
-[https://docs.blender.org/manual/en/4.5/advanced/scripting/addon_tutorial.html](https://docs.blender.org/manual/en/4.5/advanced/scripting/addon_tutorial.html)
-
-[https://www.gdcvault.com/play/1025223/Production-Level-Facial-Performance-Capture](https://www.gdcvault.com/play/1025223/Production-Level-Facial-Performance-Capture)
-
-[https://www.gdcvault.com/play/1029448/The-Facial-Animation-Pipeline-of](https://www.gdcvault.com/play/1029448/The-Facial-Animation-Pipeline-of)
-
 Information about the face detector model:
 [https://developers.google.com/edge/mediapipe/solutions/vision/face_detector#blazeface_short-range](https://developers.google.com/edge/mediapipe/solutions/vision/face_detector#blazeface_short-range)
 
@@ -24,9 +17,3 @@ More details about the MetaPipe FaceMesh:
 
 Link Model face_landmarker:
 [https://storage.googleapis.com/mediapipe-models/face_landmarker/face_landmarker/float16/latest/face_landmarker.task](https://storage.googleapis.com/mediapipe-models/face_landmarker/face_landmarker/float16/latest/face_landmarker.task)
-
-Yanlin Weng, Chen Cao, Qiming Hou, and Kun Zhou. 2014. Real-time facial animation mobile devices.
-
-C. Cao, Y. Weng, S. Lin, K. Zhou, 3D Shape Regression for Real-time Facial Animation.
-
-## Notes
