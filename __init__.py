@@ -142,7 +142,12 @@ def install_dependencies():
     # core/webcam_core.ensure_model_exists all'avvio del tracker.
 
 def register():
-    install_dependencies()
+    if bpy.app.online_access:
+        install_dependencies()
+    else:
+        print("\033[31mFaceMocap: ERROR - online access is not allowed. Enalble it in preferencies->system->network->online_access\033[0m")
+        
+    
     auto_load.init()
     auto_load.register()
 
