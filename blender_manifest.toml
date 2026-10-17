@@ -7,7 +7,7 @@ maintainer = "antonino.d.gregorio@gmail.com"
 type = "add-on"
 blender_version_min = "4.2.0"
 license = [
-  "SPDX:GPL-2.0-or-later",
+  "SPDX:GPL-3.0-or-later",
 ]
 website = "https://github.com/adgx/FaceMocap"
 tags = ["Animation", "Rigging", "3D View"]
