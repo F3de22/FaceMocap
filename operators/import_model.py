@@ -300,7 +300,7 @@ def _aggiungi_collo(arm_data, misura, adapt, origine):
     neck.head = collo_base
     neck.tail = testa_head
     head.parent = neck
-    head.use_connect = False
+    head.use_connect = True
 
     if misura.torace_base is not None:
         chest = edit_bones.new("Chest")

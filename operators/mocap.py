@@ -276,6 +276,12 @@ class FACEMOCAP_OT_start_capture(bpy.types.Operator):
             # Head sotto Neck e Chest ruotati: la sua traslazione e' uno
             # spostamento nello spazio, e va tolta la rotazione dell'intera
             # catena del corpo.
+            if parent_idx is None and pose_bone.bone.use_connect:
+                radice = pose_bone
+                while radice.parent is not None:
+                    radice = radice.parent
+                radice.location = solver.traslation_to_bone_space(radice, smoothed)
+                continue
             parent = pose_bone.parent
             if parent is not None and parent.name == "Jaw":
                 smoothed = solver.bone_pose_rotation(parent).inverted() @ smoothed
