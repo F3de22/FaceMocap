@@ -113,5 +113,5 @@ Link Model face_landmarker:
 
 ## 👥 Authors
 
-* **Antonino Di Gregorio** — *Politecnico di Torino* (`s328228@studenti.polito.it`)
-* **Federico Monetti** — *Politecnico di Torino* (`s361062@studenti.polito.it`)
+* **adgx**
+* **F3de22** 
