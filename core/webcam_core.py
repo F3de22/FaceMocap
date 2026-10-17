@@ -56,8 +56,8 @@ class Debug:
     SHOW_LANDMARK_RIGHT_IRIS: bool = False
     SHOW_LANDMARK_FACE_OVAL: bool = False
     SHOW_LANDMARK_TASSELATION: bool = False
-    SHOW_LANDMARK_FACEMOCAP: bool = False
-    SHOW_LANDMARK_BOUNDS_FACEMOCAP: bool = True
+    SHOW_LANDMARK_FACEMOCAP: bool = True
+    SHOW_LANDMARK_BOUNDS_FACEMOCAP: bool = False
 
 
 LANDMARKERS_INDEX_LIPS: list[int] = list(dict.fromkeys( idx 

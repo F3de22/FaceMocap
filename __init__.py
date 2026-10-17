@@ -147,7 +147,6 @@ def register():
     else:
         print("\033[31mFaceMocap: ERROR - online access is not allowed. Enalble it in preferencies->system->network->online_access\033[0m")
         
-    
     auto_load.init()
     auto_load.register()
 
