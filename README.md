@@ -87,7 +87,7 @@ Open the 3D Viewport sidebar by pressing **`N`** and select the **FaceMocap** ta
 
 ---
 
-## 🎛️ Tuning the $1\text{€}$ Filter
+## Tuning the $1\text{€}$ Filter
 
 To calibrate the anti-jitter filter in real-time from the **Capture** panel:
 1. Set **Beta** to `0.0` and keep your face completely still. Lower **Cutoff** (`min_cutoff`) until the residual tremor on the bones disappears without making slow movements feel overly sluggish.
