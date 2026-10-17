@@ -2,16 +2,6 @@
 
 An add-on for facial motion capture for Blender 4.2 and later verisions
 
-## To-do list
-
-- [ ] Import/Check 3rd party modules: OpenCV and Metapipe
-- [ ] Define an reference face armature
-- [ ] Posibility to create a facial mesh from Metapipe output
-- [ ] Check if just present on the scene the armature
-- [ ] Make a GUI for the add-on
-- [ ] Use openCV and Metapipe in way to obtain data from the FaceMesh model
-- [ ] Make the algorithm to animate the armature
-
 ## References
 
 [https://docs.blender.org/manual/en/4.2/advanced/extensions/index.html](https://docs.blender.org/manual/en/4.2/advanced/extensions/index.html)
