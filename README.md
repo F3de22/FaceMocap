@@ -114,6 +114,12 @@ Link Model face_landmarker:
 
 ---
 
+## Additional Materials
+
+In the **supplementsMaterial** branch, under the `additiaonalMaterials` directory, you can find a 7z archive named `faceModelMaterials`. It contains the `FaceMocapReport.pdf` report, the `FaceMocapVideoDemo.mp4` video demonstration, and the `faceModelDemo.blend` file used to test the add-on.
+
+---
+
 ## 👥 Authors
 
 * **adgx**
