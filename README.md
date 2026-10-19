@@ -61,6 +61,9 @@ FaceMocap/
    * Enable the **FaceMocap** checkbox.
 3. **Dependencies & Model Weights:**
    * Required Python packages (`mediapipe`, `opencv-python`, `numpy`) and the MediaPipe `face_landmarker.task` model are handled automatically inside the add-on's local environment upon activation/first run.
+4. **Test:**
+   * inside the repository you can find a .blend file to test the add-on
+
 
 ---
 
