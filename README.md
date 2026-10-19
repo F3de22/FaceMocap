@@ -9,8 +9,7 @@ An add-on for real-time facial motion capture for Blender 4.2 and later verision
 
 **FaceMocap** is a Blender add-on for real-time, markerless facial motion capture using a standard consumer RGB webcam. Powered by **Google MediaPipe Face Mesh** (468 3D landmarks) and stabilized via an adaptive **One Euro Filter ($1\text{€}$)**, it allows animators to drive both lightweight prototyping rigs and complex production-ready character armatures directly inside the 3D Viewport.
 
-> 💡 *Insert a GIF or video link of your webcam preview next to the Blender viewport here!*  
-> `![Demo](docs/demo.gif)`
+💡 You can find a presentation video, the report and the .blend test file in the "additionalMaterial" branch
 
 ---
 
@@ -61,8 +60,8 @@ FaceMocap/
    * Enable the **FaceMocap** checkbox.
 3. **Dependencies & Model Weights:**
    * Required Python packages (`mediapipe`, `opencv-python`, `numpy`) and the MediaPipe `face_landmarker.task` model are handled automatically inside the add-on's local environment upon activation/first run.
-4. **Test:**
-   * inside the repository you can find a .blend file to test the add-on
+4. **Testing:**
+   * inside the repository(in the "additionalMaterial" branch) you can find a .blend file to test the add-on
 
 
 ---
